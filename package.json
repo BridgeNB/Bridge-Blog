@@ -1,0 +1,30 @@
+{
+  "name": "cloud_note",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./start.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BridgeNB/cloud_note.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BridgeNB/cloud_note/issues"
+  },
+  "homepage": "https://github.com/BridgeNB/cloud_note#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.1",
+    "express": "^4.16.3",
+    "joi": "^13.7.0",
+    "mongoose": "^5.3.1",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
