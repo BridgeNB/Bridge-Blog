@@ -13,7 +13,7 @@ const blogSchema = new mongoose.Schema({
 
 blogSchema.methods.serialize = function () {
     let user;
-    if (tyypeof this.user.serialize == 'function') {
+    if (tyypeof (this.user.serialize) === 'function'){
         user = this.user.serialize();
     } else {
         user = this.user;
@@ -31,13 +31,15 @@ blogSchema.methods.serialize = function () {
     };
 };
 
+
+
 const BlogJoiSchema = Joi.object().keys({
     user: Joi.string().optional(),
-    title: Joi.string().main(1).required(),
+    title: Joi.string().min(1).required(),
     content: Joi.string().min(1).required(),
     createDate: Joi.date().timestamp(),
-    tag: joi.string().optional(),
-    comments: joi.string().optional()
+    tag: Joi.string().optional(),
+    comments: Joi.string().optional()
 })
 
 const Blog = mongoose.model('blog', blogSchema);

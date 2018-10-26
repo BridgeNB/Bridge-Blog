@@ -9,10 +9,10 @@ const userRouter = express.Router();
 // Create new user
 userRouter.post('/', (req, res) => {
     const newUser = {
-        name:       request.body.name,
-        email:      request.body.email,
-        username:   request.body.username,
-        password:   request.body.password
+        name:       req.body.name,
+        email:      req.body.email,
+        username:   req.body.username,
+        password:   req.body.password
     };
     
     const validation = Joi.validate(newUser, UserJoiSchema);
@@ -35,7 +35,7 @@ userRouter.post('/', (req, res) => {
 
         newUser.password = passwordHash;
 
-        user.create(newUser)
+        User.create(newUser)
             .then(creataUser => {
                 return res.status(HTTP_STATUS_CODES.CREATED).json(creataUser.serilize());
             })
@@ -62,7 +62,7 @@ userRouter.get('/', (req, res) => {
 
 // Retrive one user
 userRouter.get('/:userid', (req, res) => {
-    User.findOne(request.params.userid)
+    User.findOne(req.params.userid)
         .then(user => {
             return res.status(HTTP_STATUS_CODES.OK).json(user.serilize());
         })

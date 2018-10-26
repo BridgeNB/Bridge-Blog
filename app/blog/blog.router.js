@@ -80,3 +80,7 @@ blogRouter.delete('/:blogid', (req, res) => {
             return response.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(error);
         })
 })
+
+
+
+module.exports = { blogRouter };

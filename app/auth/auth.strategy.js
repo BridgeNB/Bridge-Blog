@@ -9,6 +9,7 @@ const { JWT_SECRET } = require('../config');
 const localStrategy = new LocalStrategy((username, password, passportVerify) => {
     let user;
     User.findOne({ username: username }).then(_user => {
+        user = _user;
         if (!user) {
             return Promise.reject({
                 reason: 'LoginError',
@@ -32,7 +33,7 @@ const localStrategy = new LocalStrategy((username, password, passportVerify) => 
     });
 });
 
-const JwtStrategy = new JwtStrategy(
+const jwtStrategy = new JwtStrategy(
     {
         secretOrKey: JWT_SECRET,
         jwtFromRequest: ExtractJwt.fromAuthHeaderWithScheme('Bearer'),
@@ -47,8 +48,8 @@ const localPassportMiddleware = passport.authenticate('local', { session: false 
 const jwtPassportMiddleware = passport.authenticate('jwt', { session: false });
 
 module.exports = {
-    LocalStrategy,
-    JwtStrategy,
+    localStrategy,
+    jwtStrategy,
     localPassportMiddleware,
     jwtPassportMiddleware
 };
