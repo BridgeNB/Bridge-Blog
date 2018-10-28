@@ -20,9 +20,9 @@ blogRouter.post('/', jwtPassportMiddleware, (req, res) => {
     if (validation.error) {
         return res.status(HTTP_STATUS_CODES.BAD_REQUEST).json({ error: validation.error });
     }
-    Blog.create(newNote)
-        .then(createdNote => {
-            return res.status(HTTP_STATUS_CODES.CREATED).json(createdNote.serialize());
+    Blog.create(newBlog)
+        .then(createdBlog => {
+            return res.status(HTTP_STATUS_CODES.CREATED).json(createdBlog.serialize());
         })
         .catch(error => {
             return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(error);
