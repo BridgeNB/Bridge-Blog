@@ -3,7 +3,8 @@ window.HTTP_MODULE = {
     signupUser,
     loginUser,
     createBlog,
-    getBlogById
+    getBlogById,
+    getBlogsByUser,
 };
 
 function signupUser(options) {
@@ -66,4 +67,25 @@ function createBlog(options) {
 function getBlogById(options) {
     const { blogid, onSuccess } = options;
     $.getJSON(`/api/blog/${blogid}`, onSuccess);
+}
+
+function getBlogsByUser(options) {
+    const { jwtToken, onSuccess, onError } = options;
+    $.ajax({
+        type: 'GET',
+        url: '/api/blog',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: undefined,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', `Bearer ${jwtToken}`);
+        },
+        success: onSuccess,
+        error: err => {
+            console.log(err);
+            if (onError) {
+                onError(err);
+            }
+        }
+    })
 }

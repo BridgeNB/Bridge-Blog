@@ -19,6 +19,7 @@
   "homepage": "https://github.com/BridgeNB/cloud_note#readme",
   "dependencies": {
     "bcrypt": "^3.0.1",
+    "eslint": "^5.8.0",
     "express": "^4.16.3",
     "joi": "^13.7.0",
     "jsonwebtoken": "^8.3.0",

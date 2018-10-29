@@ -11,24 +11,27 @@
 <body>
     <h1>Bridge Blog Platform</h1>
     <nav>
-        <div id="default-menu">
+        <div id="default-menu" hidden>
             <h3>Welcome to Bridge Blog Platform, You can record your life here!</h3>
             <h4>To create and view your blog, please <a href="/auth/login.html">Log in</a></h4>
             <h4>If you don't have an account, create it here<a href="/auth/signup.html"></a></h4>
         </div>
-        <div id="auth-menu">
+        <div id="auth-menu" hidden>
             <h3 id="nav-greeting">Welcome!</h3>
             <button id="logout-btn">Logout</button>
             <h4><a href="/blog/create.html">Create New Blog</a></h4>
         </div>
     </nav>
-    <section id="note-list">
+    <section id="blogs-list">
     </section>
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
-    
+    <script src="../utilities/cache.module.js"></script>
+    <script src="../utilities/http.module.js"></script>
+    <script src="../utilities/render.module.js"></script>
+    <script src="/index.page.js"></script>
 </body>
 </html>
