@@ -13,7 +13,7 @@ function onReady() {
     STATE.authUser = CACHE.getAuthenticatedUserFromCache();
 
     HTTP.getBlogById({
-        blogId: STATE.blogid,
+        blogid: STATE.blogid,
         onSuccess: RENDER.renderBlogDetails
     });
 }
