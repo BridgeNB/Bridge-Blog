@@ -17,6 +17,8 @@ function onPageLoad() {
             onSuccess: RENDER.renderBlogsList
         });
     }
+
+    $('#blogs-list').on('click', '#blog-card', onBlogClicked);
 }
 
 function updateAuthenticatedUI() {
@@ -28,4 +30,9 @@ function updateAuthenticatedUI() {
     } else {
         $('#default-menu').removeAttr('hidden');
     }
+}
+
+function onBlogClicked(event) {
+    const blogid = $(event.currentTarget).attr('data-blog-id');
+    window.open(`/blog/details.html?id=${blogid}`, '_self');
 }

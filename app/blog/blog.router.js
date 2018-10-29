@@ -53,7 +53,7 @@ blogRouter.get('/:blogid', (req, res) => {
     });
 });
 
-blogRouter.put('/:blogid', (req, res) => {
+blogRouter.put('/:blogid', jwtPassportMiddleware, (req, res) => {
     const blogUpdate = {
         title: req.body.title,
         content: req.body.content
@@ -64,7 +64,7 @@ blogRouter.put('/:blogid', (req, res) => {
     }
     Blog.findByIdAndUpdate(req.params.blogid, blogUpdate)
         .then(() => {
-            return response.status(HTTP_STATUS_CODES.NO_CONTENT).end();
+            return res.status(HTTP_STATUS_CODES.NO_CONTENT).end();
         })
         .catch((error) => {
             return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(error);

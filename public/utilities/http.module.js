@@ -5,6 +5,7 @@ window.HTTP_MODULE = {
     createBlog,
     getBlogById,
     getBlogsByUser,
+    updateBlog
 };
 
 function signupUser(options) {
@@ -88,4 +89,25 @@ function getBlogsByUser(options) {
             }
         }
     })
+}
+
+function updateBlog(options) {
+    const { blogid, jwtToken, newBlog, onSuccess, onError } = options;
+    $.ajax({
+        type: 'PUT',
+        url: `/api/blog/${blogid}`,
+        contentType: 'application/json',
+        datatype: 'json',
+        data: JSON.stringify(newBlog),
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', `Bearer ${jwtToken}`);
+        },
+        success: onSuccess,
+        error: err => {
+            console.log(err);
+            if(onError) {
+                onError(err);
+            }
+        }
+    });
 }
