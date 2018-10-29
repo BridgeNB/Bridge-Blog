@@ -13,8 +13,8 @@ blogRouter.post('/', jwtPassportMiddleware, (req, res) => {
         title: req.body.title,
         content: req.body.content,
         createDate: Date.now(),
-        tag: req.tag,
-        comments: req.comments
+        tag: req.body.tag,
+        comments: req.body.comments
     };
     const validation = Joi.validate(newBlog, BlogJoiSchema);
     if (validation.error) {

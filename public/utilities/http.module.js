@@ -2,7 +2,8 @@
 window.HTTP_MODULE = {
     signupUser,
     loginUser,
-    createBlog
+    createBlog,
+    getBlogById
 };
 
 function signupUser(options) {
@@ -45,7 +46,7 @@ function createBlog(options) {
     const { jwtToken, newBlog , onSuccess, onError } = options;
     $.ajax({
         type: 'POST',
-        url: 'api/blog',
+        url: '/api/blog',
         contentType: 'application/json',
         dataType: 'json',
         data: JSON.stringify(newBlog),
@@ -60,4 +61,9 @@ function createBlog(options) {
             }
         }
     });
+}
+
+function getBlogById(options) {
+    const { blogid, onSuccess } = options;
+    $.getJSON(`/api/blog/${blogid}`, onSuccess);
 }

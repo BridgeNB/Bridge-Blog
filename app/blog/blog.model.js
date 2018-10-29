@@ -13,7 +13,7 @@ const blogSchema = new mongoose.Schema({
 
 blogSchema.methods.serialize = function () {
     let user;
-    if (tyypeof (this.user.serialize) === 'function'){
+    if (typeof (this.user.serialize) === 'function'){
         user = this.user.serialize();
     } else {
         user = this.user;
@@ -30,8 +30,6 @@ blogSchema.methods.serialize = function () {
         comments: this.comments
     };
 };
-
-
 
 const BlogJoiSchema = Joi.object().keys({
     user: Joi.string().optional(),
