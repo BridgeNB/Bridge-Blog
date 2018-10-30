@@ -74,10 +74,10 @@ blogRouter.put('/:blogid', jwtPassportMiddleware, (req, res) => {
 blogRouter.delete('/:blogid', (req, res) => {
     Blog.findByIdAndDelete(req.params.blogid)
         .then(() => {
-            return response.status(HTTP_STATUS_CODES.NO_CONTENT).end();
+            return res.status(HTTP_STATUS_CODES.NO_CONTENT).end();
         })
         .catch(error => {
-            return response.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(error);
+            return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(error);
         })
 })
 

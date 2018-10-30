@@ -19,6 +19,8 @@ function onPageLoad() {
     }
 
     $('#blogs-list').on('click', '#blog-card', onBlogClicked);
+    $('#blogs-list').on('click', '#delete-blog-btn', onDeleteBlogBtnClick);
+
 }
 
 function updateAuthenticatedUI() {
@@ -35,4 +37,29 @@ function updateAuthenticatedUI() {
 function onBlogClicked(event) {
     const blogid = $(event.currentTarget).attr('data-blog-id');
     window.open(`/blog/details.html?id=${blogid}`, '_self');
+}
+
+function onDeleteBlogBtnClick(event) {
+    event.stopImmediatePropagation();
+    const blogid = $(event.currentTarget)
+        .closest('#blog-card')
+        .attr('data-blog-id');
+    const userConfirm = confirm('Are you sure to delete this blog');
+    if(userConfirm){
+        HTTP.deleteBlog({
+            blogid: blogid,
+            jwtToken: STATE.authUser.jwtToken,
+            onSuccess: () => {
+                alert('Note deleted successfully, redirect to home page...');
+                HTTP.getBlogsByUser({
+                    jwtToken: STATE.authUser.jwtToken,
+                    onSuccess: RENDER.renderBlogsList
+                });
+            },
+            onError: err => {
+                alert('Internal Server Error (see console)!');
+                console.error(err);
+            }
+        });
+    }
 }

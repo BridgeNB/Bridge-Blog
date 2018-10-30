@@ -5,7 +5,8 @@ window.HTTP_MODULE = {
     createBlog,
     getBlogById,
     getBlogsByUser,
-    updateBlog
+    updateBlog,
+    deleteBlog
 };
 
 function signupUser(options) {
@@ -110,4 +111,22 @@ function updateBlog(options) {
             }
         }
     });
+}
+
+function deleteBlog(options) {
+    const { blogid, jwtToken, onSuccess, onError } = options;
+    $.ajax({
+        type: 'DELETE',
+        url: `/api/blog/${blogid}`,
+        contentType: 'application/json',
+        dataType: 'json',
+        data: undefined,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', `Bearer ${jwtToken}`);
+        },
+        success: onSuccess,
+        error: err => {
+            console.log(err);
+        }
+    })
 }
