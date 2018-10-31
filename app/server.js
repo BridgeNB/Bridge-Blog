@@ -4,7 +4,7 @@ const morgan   = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
 
-const { PORT, HTTP_STATUS_CODES, MONGO_URL } = require('./config');
+const { PORT, HTTP_STATUS_CODES, MONGO_URL, TEST_MONGO_URL } = require('./config');
 const { localStrategy, jwtStrategy } = require('./auth/auth.strategy');
 
 const { userRouter } = require('./user/user.router');
@@ -33,17 +33,28 @@ app.use('*', (req, res) => {
     })
 });
 
-function startServer() {
+function startServer(testEnv) {
     return new Promise((resolve, reject) => {
-        mongoose.connect(MONGO_URL, { useNewUrlParser: true }, err => {
+        let mongoUrl;
+        if (testEnv) {
+            mongoUrl = TEST_MONGO_URL;
+        } else {
+            mongoUrl = MONGO_URL;
+        }
+        mongoose.connect(mongoUrl, { useNewUrlParser: true }, err => {
             if (err) {
                 console.log(err);
                 return reject();
-            }
-
-            server = app.listen(PORT, () => {
-                console.log(`Express server listening on http://localhost:${PORT}`);
-            }) 
+            } else {
+                server = app.listen(PORT, () => {
+                    console.log(`Express server listening on http://localhost:${PORT}`);
+                    resolve();
+                }).on('error', err => {
+                    mongoose.disconnect();
+                    console.error(err);
+                    reject(err);
+                });
+            }   
         });
     });
 }
@@ -55,10 +66,10 @@ function stopServer() {
                 if (err) {
                     console.err(err);
                     return reject();
+                } else {
+                    console.log('Express server shut down.');
+                    resolve();
                 }
-
-                console.log('Express server shut down.');
-                resolve();
             });
         });
     });

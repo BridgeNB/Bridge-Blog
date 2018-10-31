@@ -19,7 +19,7 @@ function signupUser(options) {
         data: JSON.stringify(userData),
         success: onSuccess,
         error: err => {
-            console.error(log);
+            console.log(err);
             if (onError) {
                 onError(err);
             }

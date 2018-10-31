@@ -20,7 +20,7 @@ function onPageLoad() {
 
     $('#blogs-list').on('click', '#blog-card', onBlogClicked);
     $('#blogs-list').on('click', '#delete-blog-btn', onDeleteBlogBtnClick);
-
+    $('#logout-btn').on('click', onLogoutBtnClick);
 }
 
 function updateAuthenticatedUI() {
@@ -61,5 +61,13 @@ function onDeleteBlogBtnClick(event) {
                 console.error(err);
             }
         });
+    }
+}
+
+function onLogoutBtnClick(event) {
+    const confirmation = confirm('Are you sure you want to logout?');
+    if (confirmation) {
+        CACHE.deleteAuthenticatedUserFromCache();
+        window.open('/auth/login.html', '_self');
     }
 }

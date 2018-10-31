@@ -21,7 +21,7 @@ function renderBlogsList(blogs) {
                 <i>${blog.user.name} | Last update on ${new Date(blog.updateDate).toLocaleDateString()}</i>
             </p>
             <button id="delete-blog-btn">Delete</button>
-            <a href="../blog/edit.html?id=${blog.id}" id="edit-blog-btn">Edit</a>
+            <button href="../blog/edit.html?id=${blog.id}" id="edit-blog-btn">Edit</button>
         </div>
         `;
     }

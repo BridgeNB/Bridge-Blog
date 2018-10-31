@@ -36,8 +36,8 @@ userRouter.post('/', (req, res) => {
         newUser.password = passwordHash;
 
         User.create(newUser)
-            .then(creataUser => {
-                return res.status(HTTP_STATUS_CODES.CREATED).json(creataUser.serilize());
+            .then(createdUser => {
+                return res.status(HTTP_STATUS_CODES.CREATED).json(createdUser.serialize());
             })
             .catch(err => {
                 return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(err);
@@ -51,11 +51,11 @@ userRouter.get('/', (req, res) => {
     User.find()
         .then(users => {
             return res.status(HTTP_STATUS_CODES.OK).json(
-                users.map(user => user.serilize())
+                users.map(user => user.serialize())
             );
         })
         .catch(err => {
-            return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).jason(err);
+            return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(err);
         });
 });
 
@@ -64,7 +64,7 @@ userRouter.get('/', (req, res) => {
 userRouter.get('/:userid', (req, res) => {
     User.findOne(req.params.userid)
         .then(user => {
-            return res.status(HTTP_STATUS_CODES.OK).json(user.serilize());
+            return res.status(HTTP_STATUS_CODES.OK).json(user.serialize());
         })
         .catch(err => {
             return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).jason(err);

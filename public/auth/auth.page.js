@@ -20,7 +20,7 @@ function onSignUpSubmit(event) {
     HTTP.signupUser({
         userData,
         onSuccess: user => {
-            alert(`User "#{user.namename}" created, you may log in.`);
+            alert(`User "${user.name}" created, you may log in.`);
             window.open('/auth/login.html', '_self');
         },
         onError: err => {
