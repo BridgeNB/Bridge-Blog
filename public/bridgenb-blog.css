@@ -68,14 +68,15 @@ input {
 
 .markdown-view-container {
     margin: 10px auto 0 auto;
-    width: 60%;
+    width: 90%;
+    height: 50vh;
 }
 
 .markdown-view-container #content-txt-label {
     display: block;
     border: 1px dashed #333333;
     width: 48%;
-    height: 200px;
+    height: 100%;
     margin-right: 4%;
     float: left;
 }
@@ -88,7 +89,7 @@ input {
 .markdown-view-container #markdown-target-div {
     border: 1px dashed #333333;
     width: 48%;
-    height: 200px;
+    height: 100%;
     text-align: left;
     float: left;
     vertical-align: top;
