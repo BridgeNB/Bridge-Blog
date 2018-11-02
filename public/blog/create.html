@@ -13,24 +13,19 @@
     <h1>Create a new blog</h1>
     <form id="new-blog-form">
         <label for="title-txt">
-            Title: <br>
-            <input id="title-txt" class="form-field" type="text" required><br>
+            <input id="title-txt" placeholder="title" class="form-field" type="text" required><br>
         </label>
-        <!-- <label for="comments-txt">
-            Comments: <br>
-            <input id="comments-txt" class="form-field" type="text"><br>
-        </label> -->
-        <label for="content-txt">
-            Content: <br>
-            <textarea id="content-txt" class="form-field" form="new-blog-form" required></textarea>
-            <br>
-        </label>
-        <div id="markdown-target-div"></div>
+        <div class="markdown-view-container">
+            <label for="content-txt">
+                <textarea id="content-txt" placeholder="blog content goes here!" class="form-field" form="new-blog-form" required></textarea>
+                <br>
+            </label>
+            <div id="markdown-target-div">View markdown here!</div>
+        </div>
         <label for="tag-txt">
-            Tag: <br>
-            <input id="tag-txt" class="form-field" type="text"><br>
+            <input id="tag-txt" placeholder="tag" class="form-field" type="text"><br>
         </label>
-        <input type="submit" value="Create new blog">
+        <input id="blog-create-btn" type="submit" value="Create new blog">
     </form>
     <br>
     <script

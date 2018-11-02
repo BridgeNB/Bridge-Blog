@@ -45,18 +45,18 @@ describe('Integration tests for: /api/user', function() {
         });
     });
 
-    // it('Should return all users', function () {
-    //     return chai.request(app)
-    //         .get('/api/user')
-    //         .then(res => {
-    //             expect(res).to.have.status(HTTP_STATUS_CODES.OK);
-    //             expect(res).to.be.json;
-    //             expect(res.body).to.be.a('array');
-    //             expect(res.body).to.have.lengthOf.at.least(1);
-    //             expect(res.body[0]).to.include.keys('id', 'name', 'username', 'email');
-    //             expect(res.body[0]).to.not.include.keys('password');
-    //         });
-    // });
+    it('Should return all users', function () {
+        return chai.request(app)
+            .get('/api/user')
+            .then(res => {
+                expect(res).to.have.status(HTTP_STATUS_CODES.OK);
+                expect(res).to.be.json;
+                expect(res.body).to.be.a('array');
+                expect(res.body).to.have.lengthOf.at.least(1);
+                expect(res.body[0]).to.include.keys('id', 'name', 'username', 'email');
+                expect(res.body[0]).to.not.include.keys('password');
+            });
+    });
 
     it('Should create a new user', function () {
         let newUser = createFakerUser();
@@ -71,6 +71,26 @@ describe('Integration tests for: /api/user', function() {
                 expect(res.body.name).to.equal(newUser.name);
                 expect(res.body.email).to.equal(newUser.email);
                 expect(res.body.username).to.equal(newUser.username);
+            });
+    });
+
+    it('Should return a specific user', function() {
+        let foundUser;
+        return chai.request(app)
+            .get('/api/user')
+            .then(res => {
+                expect(res).to.have.status(HTTP_STATUS_CODES.OK);
+                expect(res).to.be.json;
+                expect(res.body).to.be.a('array');
+                expect(res.body).to.have.lengthOf.at.least(1);
+                foundUser = res.body[0];
+                return chai.request(app).get(`/api/user/${foundUser.id}`);
+            })
+            .then(res => {
+                expect(res).to.have.status(HTTP_STATUS_CODES.OK);
+                expect(res).to.be.json;
+                expect(res.body).to.be.a('object');
+                expect(res.body.id).to.equal(foundUser.id);
             });
     });
 

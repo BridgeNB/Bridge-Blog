@@ -62,12 +62,12 @@ userRouter.get('/', (req, res) => {
 
 // Retrive one user
 userRouter.get('/:userid', (req, res) => {
-    User.findOne(req.params.userid)
+    User.findById(req.params.userid)
         .then(user => {
             return res.status(HTTP_STATUS_CODES.OK).json(user.serialize());
         })
         .catch(err => {
-            return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).jason(err);
+            return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).json(err);
         });
 });
 

@@ -62,13 +62,39 @@ input {
 
 /******** Create Blog **********/
 
-#content-txt {
-    width: 600px;
-    height: 400px;
+#new-blog-form {
+    margin-top: 10px;
 }
 
-#markdown-target-div {
+.markdown-view-container {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.markdown-view-container #content-txt {
     border: 1px dashed #333333;
-    width: 600px;
-    height: 400px;
+    width: 120px;
+    height: 200px;
+    margin-top: 19px;
+    margin-right: 5px;
+    float: left;
+}
+
+.markdown-view-container #markdown-target-div {
+    border: 1px dashed #333333;
+    width: 120px;
+    height: 200px;
+    text-align: left;
+    float: left;
+    vertical-align: top;
+}
+
+#tag-txt {
+    margin-top: 10px;
+    position: relative;
+}
+
+#blog-create-btn {
+    margin-top: 10px;
+    border: 1px solid #333333;
 }
