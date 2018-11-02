@@ -16,18 +16,19 @@
             Title: <br>
             <input id="title-txt" class="form-field" type="text" required><br>
         </label>
+        <!-- <label for="comments-txt">
+            Comments: <br>
+            <input id="comments-txt" class="form-field" type="text"><br>
+        </label> -->
         <label for="content-txt">
             Content: <br>
             <textarea id="content-txt" class="form-field" form="new-blog-form" required></textarea>
             <br>
         </label>
+        <div id="markdown-target-div"></div>
         <label for="tag-txt">
             Tag: <br>
             <input id="tag-txt" class="form-field" type="text"><br>
-        </label>
-        <label for="comments-txt">
-            comments: <br>
-            <input id="comments-txt" class="form-field" type="text"><br>
         </label>
         <input type="submit" value="Create new blog">
     </form>
@@ -37,6 +38,7 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
     </script>
+    <script src=" https://cdn.rawgit.com/showdownjs/showdown/1.8.7/dist/showdown.min.js"></script>
     <script src="../utilities/cache.module.js"></script>
     <script src="../utilities/http.module.js"></script>
     <script src="../utilities/render.module.js"></script>

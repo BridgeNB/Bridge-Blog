@@ -7,10 +7,10 @@ let STATE = {};
 $(document).ready(onReady);
 
 function onReady() {
-    STATE.authorizedUser = CACHE.getAuthenticatedUserFromCache(),
+    STATE.authorizedUser = CACHE.getAuthenticatedUserFromCache();
+    realTimeConvertToMarkdown();
     $('#new-blog-form').on('submit', onCreateSubmit);
 }
-
 
 function onCreateSubmit(event) {
     event.preventDefault();
@@ -32,4 +32,19 @@ function onCreateSubmit(event) {
             console.error(err);
         }
     });
+}
+
+function realTimeConvertToMarkdown() {
+    let converter = new showdown.Converter();
+    let pad = $('#content-txt');
+    let markdownArea = $('#markdown-target-div');
+
+
+    let convertTextAreaToMarkdown = function() {
+        let html = converter.makeHtml(pad.val());
+        console.log(html);
+        markdownArea.html(html);
+    };
+
+    pad.on('keyup keydown', convertTextAreaToMarkdown);
 }
