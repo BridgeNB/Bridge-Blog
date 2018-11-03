@@ -18,7 +18,6 @@ function onPageLoad() {
         });
     }
 
-    // realTimeMarkdownRendering();
     $('#blogs-list').on('click', '#blog-card', onBlogClicked);
     $('#blogs-list').on('click', '#delete-blog-btn', onDeleteBlogBtnClick);
     $('#logout-btn').on('click', onLogoutBtnClick);
@@ -72,10 +71,3 @@ function onLogoutBtnClick(event) {
         window.open('/auth/login.html', '_self');
     }
 }
-
-// function realTimeMarkdownRendering() {
-//     let converter = new showdown.Converter();
-//     let markdownArea = $('.blog-content');
-//     let html = converter.makeHtml(markdownArea.val());
-//     markdownArea.html(html);
-// }

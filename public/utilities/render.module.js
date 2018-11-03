@@ -23,7 +23,6 @@ function renderBlogsList(blogs) {
                 <i>${blog.user.name} | Last update on ${new Date(blog.updateDate).toLocaleDateString()}</i>
             </p>
             <button id="delete-blog-btn">Delete</button>
-            <button href="../blog/edit.html?id=${blog.id}" id="edit-blog-btn">Edit</button>
         </div>
         `;
     }
@@ -35,7 +34,7 @@ function renderBlogDetails(blog) {
         <h1>${blog.title}</h1>
         <i>${blog.user.name} | ${new Date(blog.updateDate).toLocaleDateString()}</i>
         <p>${blog.content}</p>
-        <button id="edit-note-btn">Edit Note</button>
+        <button id="edit-blog-btn" onclick="window.location.href='/blog/edit.html?id=${blog.id}'">Edit</button>
     `);
 }
 
