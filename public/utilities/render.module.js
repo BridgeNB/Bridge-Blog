@@ -29,11 +29,12 @@ function renderBlogsList(blogs) {
 }
 
 function renderBlogDetails(blog) {
+    let html = realTimeMarkdownRendering(blog.content);
     $('#blog-details').html(`
         <br>
         <h1>${blog.title}</h1>
         <i>${blog.user.name} | ${new Date(blog.updateDate).toLocaleDateString()}</i>
-        <p>${blog.content}</p>
+        <div class="blog-content">${html}</div>
         <button id="edit-blog-btn" onclick="window.location.href='/blog/edit.html?id=${blog.id}'">Edit</button>
     `);
 }

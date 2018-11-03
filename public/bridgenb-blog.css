@@ -126,6 +126,11 @@ input {
     width: 60%;
 }
 
+/********  Detail **********/
+#blog-details .blog-content {
+    margin: 1rem;
+}
+
 /********* Media Query **********/
 
 @media screen and (min-width: 500px) {
