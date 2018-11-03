@@ -121,6 +121,11 @@ input {
     margin: 0 1rem;
 }
 
+/********* Edit *************/
+#title-txt {
+    width: 60%;
+}
+
 /********* Media Query **********/
 
 @media screen and (min-width: 500px) {

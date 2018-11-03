@@ -16,9 +16,25 @@ function onReady() {
         blogid: STATE.blogid,
         onSuccess: RENDER.renderEditingBlog
     });
-
+    realTimeConvertToMarkdown();
     $('#blog-edit-form').on('submit', onEditSubmit);
 }
+
+
+function realTimeConvertToMarkdown() {
+    let converter = new showdown.Converter();
+    let pad = $('#content-txt');
+    let markdownArea = $('#markdown-target-div');
+
+
+    let convertTextAreaToMarkdown = function() {
+        let html = converter.makeHtml(pad.val());
+        markdownArea.html(html);
+    };
+
+    pad.on('keyup keydown', convertTextAreaToMarkdown);
+}
+
 
 function onEditSubmit(event) {
     event.preventDefault();

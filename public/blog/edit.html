@@ -16,11 +16,13 @@
             Title:
             <br><input id="title-txt" type="text" size="50" disabled required> 
         </label>
-        <br>
-        <label for="content-txt">
-            Content:
-            <br><textarea id="content-txt" form="new-blog-form" cols="50" disabled required></textarea> 
-        </label>
+        <div class="markdown-view-container">
+            <label id="content-txt-label" for="content-txt">
+                <textarea id="content-txt" placeholder="blog content goes here!" class="form-field" form="new-blog-form" required></textarea>
+                <br>
+            </label>
+            <div id="markdown-target-div"></div>
+        </div>
         <br>
         <input type="submit" value="Save Changes">
     </form>

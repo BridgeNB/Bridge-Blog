@@ -41,6 +41,7 @@ function renderBlogDetails(blog) {
 function renderEditingBlog(blog) {
     $('#title-txt').prop('disabled', false).val(blog.title);
     $('#content-txt').prop('disabled', false).val(blog.content);
+    $('#markdown-target-div').html(realTimeMarkdownRendering(blog.content));
 }
 
 function realTimeMarkdownRendering(textString) {
