@@ -42,7 +42,6 @@ function realTimeConvertToMarkdown() {
 
     let convertTextAreaToMarkdown = function() {
         let html = converter.makeHtml(pad.val());
-        console.log(html);
         markdownArea.html(html);
     };
 

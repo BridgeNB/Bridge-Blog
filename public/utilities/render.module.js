@@ -13,10 +13,12 @@ function renderBlogsList(blogs) {
             blogSummary = `${blog.content.substring(0, 120)}...`;
         }
         // Tag needed
+        // Convert to markdonw
+        let markdownBlogHtml = realTimeMarkdownRendering(blogSummary); 
         return `
         <div id="blog-card" data-blog-id="${blog.id}">
             <h3 class="blog-header">${blog.title}</h3>
-            <p class="blog-content">${blogSummary}</p>
+            <div class="blog-content">${markdownBlogHtml}</div>
             <p class="blog-info">
                 <i>${blog.user.name} | Last update on ${new Date(blog.updateDate).toLocaleDateString()}</i>
             </p>
@@ -42,3 +44,8 @@ function renderEditingBlog(blog) {
     $('#content-txt').prop('disabled', false).val(blog.content);
 }
 
+function realTimeMarkdownRendering(textString) {
+    let converter = new showdown.Converter();
+    let html = converter.makeHtml(textString);
+    return html;
+}
