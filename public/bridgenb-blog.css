@@ -15,6 +15,7 @@ body {
     padding: 1rem;
     margin: 0 auto;
     text-align: center;
+    background: #ecf3f3;
 }
 
 hr {
@@ -74,7 +75,7 @@ input {
 
 .markdown-view-container #content-txt-label {
     display: block;
-    border: 1px dashed #333333;
+    border: 0.2rem dashed #333333;
     width: 48%;
     height: 100%;
     margin-right: 4%;
@@ -87,12 +88,13 @@ input {
 }
 
 .markdown-view-container #markdown-target-div {
-    border: 1px dashed #333333;
+    border: 0.2rem dashed #333333;
     width: 48%;
     height: 100%;
     text-align: left;
     float: left;
     vertical-align: top;
+    background: white;
 }
 
 #tag-txt-label {
@@ -108,5 +110,26 @@ input {
 
 #blog-create-btn {
     margin-top: 10px;
-    border: 1px solid #333333;
+    border: 0.2rem solid #333333;
+}
+
+
+/********* Media Query **********/
+
+@media screen and (min-width: 500px) {
+    body {
+        max-width: 500px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    body {
+        max-width: 700px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        max-width: 1000px;
+    }
 }
