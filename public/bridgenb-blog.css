@@ -125,6 +125,10 @@ input {
     margin: 0 1rem;
 }
 
+.blog-content img {
+    width: 80%;
+}
+
 /********* Edit *************/
 #title-txt {
     width: 60%;
