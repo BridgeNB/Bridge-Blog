@@ -1,5 +1,5 @@
 {
-  "name": "cloud_note",
+  "name": "bridge_blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BridgeNB/cloud_note.git"
+    "url": "git+https://github.com/BridgeNB/bridge_blog.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BridgeNB/cloud_note/issues"
+    "url": "https://github.com/BridgeNB/bridge_blog/issues"
   },
-  "homepage": "https://github.com/BridgeNB/cloud_note#readme",
+  "homepage": "https://github.com/BridgeNB/bridge_blog#readme",
   "dependencies": {
     "bcrypt": "^3.0.2",
     "chai": "^4.2.0",
