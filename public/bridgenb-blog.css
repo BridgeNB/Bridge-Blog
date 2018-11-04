@@ -97,6 +97,10 @@ input {
     background: white;
 }
 
+.markdown-view-container #markdown-target-div img {
+    width: 80%;
+}
+
 #tag-txt-label {
   display: block;
   clear: both;
