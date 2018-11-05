@@ -12,12 +12,16 @@
 </head>
 
 <body>
-    <h1>Bridge Blog Platform</h1>
-    <nav>
+    <div id="nav-btns" hidden>
+            <button id="nav-btns-login" onclick="window.location.href='/auth/login.html'">Log In</button>
+            <button id="nav-btns-signup" onclick="window.location.href='/auth/signup.html'">Sign Up</button>
+    </div>
+    <nav id="default-page-nav">
         <div id="default-menu" hidden>
+            <h1>Bridge Blog Platform</h1>
             <h3>Welcome to Bridge Blog Platform, You can record your life here!</h3>
-            <h4>To create and view your blog, please <a href="/auth/login.html">Log in</a></h4>
-            <h4>If you don't have an account, please <a href="/auth/signup.html">create it here</a></h4>
+            <button id="default-menu-btns-signup" onclick="window.location.href='/auth/signup.html'">Sign Up</button>
+            <h4>Already have an account? <a href="/auth/login.html">Log in</a></h4>
         </div>
         <div id="auth-menu" hidden>
             <h3 id="nav-greeting">Welcome!</h3>

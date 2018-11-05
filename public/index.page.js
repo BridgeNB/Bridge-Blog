@@ -29,8 +29,10 @@ function updateAuthenticatedUI() {
         STATE.authUser = authUser;
         $('#nav-greeting').html(`Welcome, ${authUser.name}`);
         $('#auth-menu').removeAttr('hidden');
+        $('#default-page-nav').css('padding-top', '0');
     } else {
         $('#default-menu').removeAttr('hidden');
+        $('#nav-btns').removeAttr('hidden');
     }
 }
 

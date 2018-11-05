@@ -20,10 +20,15 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 
 * [JQuery](https://jquery.com/) - Javascript library
-[Node]
-[Showdown]
-[Mongodb]
-[Express]
+* [Node](https://nodejs.org/en/) - Javascript engine
+* [Showdown](http://showdownjs.com/) - Markdown converter
+* [Mongodb](https://www.mongodb.com/) - Mongodb
+* [Express](https://expressjs.com/) - express for web framework
+
+## Testing:
+    - Unit Test: Mocha, Chai, Chai-Http
+    - Integration Test: Travis-ci
+    - Stress Test: load-test
 
 ## Contributing
 
@@ -49,7 +54,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ### Deployment
 https://bridgenb-blog.herokuapp.com/
 
-### Testing:
-    - Unit Test: Mocha, Chai, Chai-Http
-    - Integration Test: Travis-ci
-    - Stress Test: 

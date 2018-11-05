@@ -43,7 +43,7 @@ input {
     font-size: 1.5rem;
     font-weight: bold;
     border-radius: 5px;
-    background-color: #415b76;
+    background-color: #7b9ba6;
     padding: 0.2rem 1rem;
     color: wheat;
 }
@@ -68,6 +68,26 @@ a {
     font-weight: bold;
     font-size: 1.5rem;
 }
+
+/********* default page   **********/
+#nav-btns {
+    position: fixed;
+    right: 5vw;
+    top: 5vh;
+}
+
+#nav-btns button {
+    font-size: 1rem;
+}
+
+#default-page-nav {
+    padding-top: 15vh;
+}
+
+#default-menu h1 {
+    font-size: 3rem;
+}
+
 /********* Auth and Log in *********/
 
 #auth-menu {
@@ -84,6 +104,10 @@ a {
 
 #login-form input {
     margin: 10px;
+}
+
+#login-form-submit-btn {
+    background-color: #415b76;
 }
 
 #sign-up-form input {
@@ -184,6 +208,10 @@ a {
     color: black;
 }
 
+#blog-edit-form {
+    padding-top: 0;
+}
+
 /********  Detail **********/
 #blog-details .blog-content {
     margin: 1rem;
@@ -195,16 +223,43 @@ a {
     body {
         max-width: 80vw;
     }
+    #nav-btns button {
+        font-size: 1.5rem;
+    }
+    /********* auth *********/ 
+    form {
+        padding-top: 20vh;
+    }
 }
 
 @media screen and (min-width: 700px) {
     body {
         max-width: 80vw;
     }
+    #default-page-nav {
+        padding-top: 30vh;
+    }
+    #nav-btns button {
+        font-size: 1.5rem;
+    }
+    /********* auth *********/
+    form {
+        padding-top: 20vh;
+    }
 }
 
 @media screen and (min-width: 1000px) {
     body {
         max-width: 80vw;
+    }
+    #default-page-nav {
+        padding-top: 30vh;
+    }
+    #nav-btns button {
+        font-size: 1.5rem;
+    }
+    /********* auth *********/
+    form {
+        padding-top: 20vh;
     }
 }
