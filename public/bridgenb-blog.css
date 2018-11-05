@@ -14,14 +14,14 @@ html {
 body {
     padding: 1rem;
     margin: 0 auto;
+    margin-bottom: 2rem;
     text-align: center;
-    background: #ecf3f3;
+    background: #cdd6d5;
 }
 
 hr {
     border: 0;
-    height: 1px;
-    background-color: black;
+    background-color: #233656;
 }
 
 input, textarea {
@@ -30,23 +30,52 @@ input, textarea {
 
 button {
     font-family: inherit;
-    font-size: 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
     border-radius: 5px;
+    background-color: #415b76;
+    padding: 0.2rem 1rem;
+    color: wheat;
 }
 
 input {
     font-family: inherit;
-    font-size: 1em;
+    font-size: 1.5rem;
+    font-weight: bold;
     border-radius: 5px;
-    text-align: center;
+    background-color: #415b76;
+    padding: 0.2rem 1rem;
+    color: wheat;
 }
 
+footer {
+    background-color: #7b9ba6;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer p {
+    margin: 0 auto;
+    margin-top: 0.5rem;
+}
+
+a {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
 /********* Auth and Log in *********/
 
 #auth-menu {
-    background-color: black;
+    background-color: #7B9BA6;
     color: white;
     border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 #auth-menu h3 {
@@ -94,7 +123,8 @@ input {
     text-align: left;
     float: left;
     vertical-align: top;
-    background: white;
+    background:#EEF4F2;
+    overflow: scroll;
 }
 
 .markdown-view-container #markdown-target-div img {
@@ -108,8 +138,12 @@ input {
 }
 
 #tag-txt {
+    width: 60%;
     margin-top: 10px;
     position: relative;
+    background-color: #EEF4F2;
+    text-align: center;
+    color: black;
 }
 
 #blog-create-btn {
@@ -118,9 +152,14 @@ input {
 }
 
 /********* Index page ***********/
+
+.blog-header {
+    font-size: 2rem;
+}
+
 .blog-content {
     text-align: left;
-    background-color: white;
+    background-color:#EEF4F2;
     padding: 0.5rem;
     margin: 0 1rem;
 }
@@ -129,9 +168,20 @@ input {
     width: 80%;
 }
 
+#delete-blog-btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #415b76;
+    padding: 0.2rem 1rem;
+    color: wheat;
+}
+
 /********* Edit *************/
 #title-txt {
     width: 60%;
+    background-color: #EEF4F2;
+    text-align: center;
+    color: black;
 }
 
 /********  Detail **********/
@@ -143,18 +193,18 @@ input {
 
 @media screen and (min-width: 500px) {
     body {
-        max-width: 500px;
+        max-width: 80vw;
     }
 }
 
 @media screen and (min-width: 700px) {
     body {
-        max-width: 700px;
+        max-width: 80vw;
     }
 }
 
 @media screen and (min-width: 1000px) {
     body {
-        max-width: 1000px;
+        max-width: 80vw;
     }
 }
