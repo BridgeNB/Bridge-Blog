@@ -1,8 +1,15 @@
 # Thinkful capstone project - Bridge Blog Platform
-
 This project uses Mongodb, Express, Node to build a full stack blog platform.
 
+## Deployment
+https://bridgenb-blog.herokuapp.com/
+
 ## Bridge blog introduction
+    - Index page
+
+    - Create page
+
+    - Edit page
 
 
 ## Getting Started
@@ -51,6 +58,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 
-### Deployment
-https://bridgenb-blog.herokuapp.com/
 

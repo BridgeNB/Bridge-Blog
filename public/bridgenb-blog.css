@@ -179,6 +179,7 @@ a {
 
 .blog-header {
     font-size: 2rem;
+    cursor: pointer;
 }
 
 .blog-content {
@@ -186,6 +187,7 @@ a {
     background-color:#EEF4F2;
     padding: 0.5rem;
     margin: 0 1rem;
+    cursor: pointer;
 }
 
 .blog-content img {
@@ -198,6 +200,19 @@ a {
     background-color: #415b76;
     padding: 0.2rem 1rem;
     color: wheat;
+}
+
+
+/********* Create *************/
+
+#new-blog-form {
+    padding-top: 0;
+}
+
+#markdown-tutorial-link {
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
 }
 
 /********* Edit *************/
