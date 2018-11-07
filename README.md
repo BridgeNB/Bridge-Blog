@@ -1,20 +1,29 @@
 # Thinkful capstone project - Bridge Blog Platform
-This project uses Mongodb, Express, Node to build a full stack blog platform.
+This project uses Mongodb, Express, Node to build a full stack blog platform which support CURD and Markdown features.
 
 ## Deployment
 https://bridgenb-blog.herokuapp.com/
 
 ## Bridge blog introduction
-    - Index page
 
-    - Create page
+Front page
+![front_page](/img/front_page.png "Front Page")
 
-    - Edit page
+Index page
+![index_page](/img/index_page.png "Index Page")
 
+Create page
+![create_page](/img/create_page.png "Create Page")
+
+Detail page
+![detail_page](/img/detail_page.png "detial Page")
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Use
+username: bridgenb <br>
+password: 123456789 <br>
+to see how it looks like
 
 ## Prerequisites
 
@@ -57,5 +66,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Hat tip to anyone who's code was used
 * Inspiration
-
-
