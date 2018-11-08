@@ -12,8 +12,9 @@ html {
 }
 
 body {
-    padding: 1rem;
+    padding: 0;
     margin: 0 auto;
+    max-width: none;
     margin-bottom: 2rem;
     text-align: center;
     background: #cdd6d5;
@@ -34,7 +35,7 @@ button {
     font-weight: bold;
     border-radius: 5px;
     background-color: #415b76;
-    padding: 0.2rem 1rem;
+    padding: 0.5rem 1rem;
     color: wheat;
 }
 
@@ -98,8 +99,9 @@ a {
     font-weight: bold;
 }
 
-#auth-menu h3 {
-    padding-top: 10px;
+#nav-greeting {
+    margin: 1vh;
+    padding-top: 1vh;
 }
 
 #login-form input {
@@ -176,6 +178,11 @@ a {
 }
 
 /********* Index page ***********/
+
+#blogs-list {
+    margin: 0 auto;
+    max-width: 1000px;
+}
 
 .blog-header {
     font-size: 2rem;
@@ -266,9 +273,32 @@ a {
 @media screen and (min-width: 1000px) {
     body {
         max-width: 80vw;
+        padding-top: 80px;
+    }
+    #auth-menu {
+        height: 80px;
+        padding: 15px;
     }
     #default-page-nav {
-        padding-top: 30vh;
+        padding-top: 0px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    #nav-greeting {
+        margin-top: 0;
+        margin: 0;
+        float: left;
+        padding: 0;
+        font-size: 2em;
+    }
+    #logout-btn {
+        float: right;
+        margin-left: 15px;
+    }
+    #auth-menu-edit-btn {
+        float: right;
     }
     #nav-btns button {
         font-size: 1.5rem;
